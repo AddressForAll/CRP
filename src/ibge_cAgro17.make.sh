@@ -1,33 +1,33 @@
-mkdir  /tmp/agro
-mkdir /tmp/agro/utf8
+mkdir -p /tmp/agro
+mkdir -p /tmp/agro/utf8
 
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/11_RONDONIA.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/12_ACRE.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/13_AMAZONAS.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/14_RORAIMA.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/15_PARA.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/16_AMAPA.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/17_TOCANTINS.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/21_MARANHAO.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/22_PIAUI.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/23_CEARA.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/24_RIO_GRANDE_DO_NORTE.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/25_PARAIBA.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/26_PERNAMBUCO.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/27_ALAGOAS.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/28_SERGIPE.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/29_BAHIA.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/31_MINAS_GERAIS.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/32_ESPIRITO_SANTO.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/33_RIO_DE_JANEIRO.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/35_SAO_PAULO.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/41_PARANA.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/42_SANTA_CATARINA.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/43_RIO_GRANDE_DO_SUL.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/50_MATO_GROSSO_DO_SUL.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/51_MATO_GROSSO.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/52_GOIAS.zip
-wget -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/53_DISTRITO_FEDERAL.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/11_RONDONIA.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/12_ACRE.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/13_AMAZONAS.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/14_RORAIMA.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/15_PARA.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/16_AMAPA.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/17_TOCANTINS.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/21_MARANHAO.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/22_PIAUI.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/23_CEARA.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/24_RIO_GRANDE_DO_NORTE.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/25_PARAIBA.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/26_PERNAMBUCO.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/27_ALAGOAS.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/28_SERGIPE.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/29_BAHIA.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/31_MINAS_GERAIS.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/32_ESPIRITO_SANTO.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/33_RIO_DE_JANEIRO.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/35_SAO_PAULO.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/41_PARANA.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/42_SANTA_CATARINA.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/43_RIO_GRANDE_DO_SUL.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/50_MATO_GROSSO_DO_SUL.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/51_MATO_GROSSO.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/52_GOIAS.zip
+wget -N -P /tmp/agro -c ftp://ftp.ibge.gov.br/Censo_Agropecuario/Censo_Agropecuario_2017/Cadastro_Nacional_de_Enderecos_Fins_Estatisticos/53_DISTRITO_FEDERAL.zip
 
 # see data/integrity/ibge_cAgro17.mk01zip.sha1sum.txt
 
@@ -65,3 +65,8 @@ cd /tmp/agro
 sha1sum  *.zip > sha1sum.txt
 cd utf8
 sha1sum  *.csv > sha1sum.txt
+
+# check by git, comment or change for other git
+diff /tmp/agro/sha1sum.txt       ~/afa-gits/CRP/data/integrity/ibge_cAgro17.mk01zip.sha1sum.txt
+diff /tmp/agro/utf8/sha1sum.txt  ~/afa-gits/CRP/data/integrity/ibge_cAgro17.mk02utf8.sha1sum.txt
+

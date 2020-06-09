@@ -11,8 +11,8 @@ include('convert.php');
 
 $f = 'data/CEP-to-CRP.csv';
 $tab = NULL;
-$modeJs = isset($argv[1])? $argv[1]: 0;
-
+$modeJs = isset($argv[1])? strtolower($argv[1]): 0; // 0,1,sql
+$modeSql = ($modeJs=='sql');
 if (file_exists($f))
 	$tab = array_map('str_getcsv', file($f));
 else
@@ -38,12 +38,15 @@ foreach($tab as $r) {
 					$c->setPart( $mid ); $input = $c->crp; $out = $c->asCEP();
 				}
 				$sep = $i? "; &nbsp;&nbsp; ": '';
-				if ($modeJs==1)   // CRP  to CEP
+				if ($modeSql)
+					$msg .= " ('$input','$out'),";
+				elseif ($modeJs==1)   // CRP  to CEP
 					$msg .= "$sep$input=<script>document.write( assertMsg(cc.asCEP('$input'),'$out') )</script>"; // or <span>$input</span>
 				else           		// CEP to CRP
 					$msg .= "$sep$out=<script>document.write( assertMsg(cc.set('$out').crp,'$input') )</script>";
 			} // for
-			echo "\n<li>$msg</li>"; //or "\n<li id=\"x$modeJs-$n\">$msg</li>";
+                        $msg = trim($msg,',');
+			echo $modeSql? "\nINSERT INTO crp.sample(crp,cep) VALUES $msg;": "\n<li>$msg</li>"; //or "\n<li id=\"x$modeJs-$n\">$msg</li>";
 	} elseif (!$modeJs && $x) { // CEP to
 		$c->set($x);
 		$cep = $c->asCEP();
