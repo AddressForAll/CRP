@@ -31,8 +31,10 @@ As principais aplicações do CEP nos dias de hoje (2016) estão vinculadas às 
 
 <small>NOTA: a ideia de "roteamento" no lugar de "endereçamento" ajuda inclusive a evitar confusão com termos como "endereço do lote" e "ponto de endereçamento" &mdash; o lote ou seu centróide pode ter mais de um CEP, ou seja, o lote pode ter mais de um portão para receber entregas.</small>
 
-## Código
-A proposta de sintaxe é bastante simples, a maior parte das explicações a seguir é para demonstrar que essa sintaxe é reversível e as suas especificações são completas.
+## geocódigo
+O CEP e o CRP são considerados [sistemas de geocódigos hierárquicos](https://en.wikipedia.org/wiki/Geocode). Na sintaxe do sistema CEP existem apenas dígitos, e na sintaxe do CRP o prefixo do código é um acrônimo de tipo de unidade da federação.
+
+No CRP a proposta de sintaxe é bastante simples, a maior parte das explicações a seguir é para demonstrar que essa sintaxe é reversível e as suas especificações são completas.
 
 Não é necessário um código único para todo o Brasil, a unicidade pode ser garantida por unidade da federação (UF), de modo que cada _string_ de CRP contém a  UF e um código contextualizado pela sua UF. Por exemplo "SP2345678".
 
@@ -97,6 +99,16 @@ CHECK(
 No caso do PostgreSQL, que oferece nativamente o tratamento de [regular expressions](https://en.wikipedia.org/wiki/Regular_expression),  o código das  funções `crp_is_valid()`,  `crp_asCEP()` e `crp_format()` pode ser implementado em SQL,  [PL/pgSQL](https://www.postgresql.org/docs/9.5/static/plpgsql.html) ou adaptando diretamente os códigos deste projeto ([convert.js](src/convert.js) para [PLv8](https://github.com/plv8/plv8) ou [convert.php](src/convert.php) para [PL/PHP](https://www.postgresql.org/docs/9.5/static/external-pl.html)).
 
 ------
+
+# Instalação pura SQL
+Em 2020 optou-se por garantir toda a implantação e testes em SQL, tendo como referência o PostgreSQL 10+.
+Em caso de demanda por webservices, as funções e tabelas SQL podem ser expostas em HTTP através do PostgREST.
+
+Passo a passo, supondo base de dados *sandbox*,  depois de clonado o *git* e efetuado o  `cd CRP`  no terminal:
+```sh
+
+```
+
 
 # Licença
 Conteúdo, dados e algoritmos: domínio público.
