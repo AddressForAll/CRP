@@ -106,4 +106,35 @@ CREATE or replace FUNCTION crp.from_cep(cep int) RETURNS text AS $wrap$
 $wrap$ LANGUAGE SQL IMMUTABLE;
 COMMENT ON FUNCTION crp.from_cep(int) IS 'Encodes integer CEP as CRP';
 
-
+CREATE or replace FUNCTION crp.to_cep(
+  p_crp text,
+  p_compact boolean DEFAULT false
+) RETURNS text AS $f$
+DECLARE
+    v_uf text;
+    v_crp_pref text;
+    v_cep_final text;
+    v_uf2pref_full jsonb := '{
+        "AC":"699", "RR":"693", "AP":"689", "AM":"69",  "MA":"65",  "PI":"64", 
+        "MS":"79",  "MT":"78",  "TO":"77",  "RO":"76",  "RN":"59",  "PB":"58", 
+        "AL":"57",  "PE":"5",   "SE":"49",  "BA":"4",   "RG":"29",  "RJ":"2", 
+        "RS":"9",   "MG":"3",   "SP":"1",   "ZM":"0",
+        "CE":"6",   "PA":"6",   "DF":"7",   "GO":"7",   "PR":"8",   "SC":"8"
+    }';
+BEGIN
+    p_crp = upper(trim(p_crp));
+    IF p_crp IS NULL OR length(p_crp) < 2 THEN
+        RAISE EXCEPTION 'ERROR-4: CRP vazio ou inválido';
+    END IF;
+    v_uf := substring(p_crp from 1 for 2);
+    IF NOT (v_uf2pref_full ? v_uf) THEN
+        RAISE EXCEPTION 'ERROR-5: CRP % com prefixo % desconhecido', p_crp, v_uf;
+    END IF;
+    v_crp_pref := v_uf2pref_full ->> v_uf;
+    v_cep_final := v_crp_pref || substring(p_crp from 3);
+    IF p_compact THEN
+        v_cep_final := replace(v_cep_final, '-', '');
+    END IF;
+    RETURN v_cep_final;
+END;
+$f$ LANGUAGE plpgsql IMMUTABLE;
